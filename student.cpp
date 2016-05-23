@@ -14,21 +14,21 @@ void STUDENT::course_sel(MYSQL *mysql, string sec_id,string year){
 	if (!mysql_query(mysql, find_conflict_sql.c_str())){
 		res = mysql_store_result(mysql);
 		if (res && mysql_num_rows(res)){
-			cout << "ÓëÒÑÑ¡¿Î³Ì³åÍ»"<< endl;
+			cout << "ä¸Žå·²é€‰è¯¾ç¨‹å†²çª"<< endl;
 			return;
 		}
 	}
 	string add_new_sql = "insert into stu_course (s_id,sec_id,grade,year) values ('"
 		+ this->s_id + "','" + sec_id + "','" + "','" + year + "');";
 	if (!mysql_query(mysql, add_new_sql.c_str())){
-		cout << "Ñ¡¿Î³É¹¦!";
+		cout << "é€‰è¯¾æˆåŠŸ!";
 	}
 }
 
 void STUDENT::course_del(MYSQL *mysql, string sec_id,string year){
 	string sql = "delete from stu_course where s_id='" + this->s_id + "' and sec_id='" + sec_id + "' and year='"+year+"';";
 	if (!mysql_query(mysql, sql.c_str())){
-		cout << "É¾³ý³É¹¦!" << endl;					//ÔÝÊ±Î´½â¾öÈçºÎ¼ì²âÉ¾³ý²Ù×÷³É¹¦µ«ÎÞ¼ÇÂ¼É¾³ýµÄÇé¿ö
+		cout << "åˆ é™¤æˆåŠŸ!" << endl;					//æš‚æ—¶æœªè§£å†³å¦‚ä½•æ£€æµ‹åˆ é™¤æ“ä½œæˆåŠŸä½†æ— è®°å½•åˆ é™¤çš„æƒ…å†µ
 	}
 	else{
 		cout << mysql_error(mysql) << endl;
@@ -44,7 +44,7 @@ void STUDENT::get_course(MYSQL *mysql,string year){
 		res = mysql_store_result(mysql);
 		if (mysql_num_rows(res)){
 			int num = mysql_num_fields(res);
-			while (row = mysql_fetch_row(res)){			//fetch½á¹ûÐÐ
+			while (row = mysql_fetch_row(res)){			//fetchç»“æžœè¡Œ
 				for (int i = 0; i < num; i++){
 					if (row[i] != NULL)
 						cout << row[i] << "\t";
@@ -55,7 +55,7 @@ void STUDENT::get_course(MYSQL *mysql,string year){
 			}
 		}
 		else{
-			cout << year + "Äê²¢Ã»ÓÐÑ¡¿Î" << endl;
+			cout << year + "å¹´å¹¶æ²¡æœ‰é€‰è¯¾" << endl;
 		}
 	}
 	else{
@@ -80,7 +80,7 @@ void STUDENT::search_course(MYSQL *mysql, string keywords, string type){
 			}
 		}
 		else{
-			cout << "Ã»ÓÐÕÒµ½Ïà¹Ø¼ÇÂ¼!" << endl;
+			cout << "æ²¡æœ‰æ‰¾åˆ°ç›¸å…³è®°å½•!" << endl;
 		}
 	}
 }
@@ -103,7 +103,7 @@ string STUDENT::get_dept(){
 
 /*
 int main(){
-	STUDENT stu("1001","ÑîÞÈ»Ô","¼ÆËã»ú","¼ÆËã»ú");
+	STUDENT stu("1001","æ¨å¥•è¾‰","è®¡ç®—æœº","è®¡ç®—æœº");
 	MYSQL_CONN my;
 	if (!my.connect()) return 0;
 	//stu.course_sel(MYSQL_CONN::mysql, "1002","2015");

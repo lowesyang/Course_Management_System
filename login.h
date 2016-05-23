@@ -4,11 +4,11 @@ using namespace std;
 
 class LOGIN{
 private:
-	MYSQL_RES *res;														//±£´æµÇÂ¼ºóµÄ½á¹û¼¯
+	MYSQL_RES *res;														//ä¿å­˜ç™»å½•åçš„ç»“æœé›†
 public:
 	int is_login;
 	LOGIN();
-	void login(MYSQL *mysql, string user, string pswd, string type);	//µÇÂ¼
-	MYSQL_RES *get_result();											// »ñÈ¡½á¹û¼¯
-	void logout();														//µÇ³ö
+	void login(MYSQL *mysql, string user, string pswd, string type);	//ç™»å½•
+	MYSQL_RES *get_result();											// è·å–ç»“æœé›†
+	void logout();														//ç™»å‡º
 };

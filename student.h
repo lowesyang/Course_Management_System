@@ -8,10 +8,10 @@ private:
 	string s_id, name, major, dept;
 public:
 	STUDENT(string s_id,string name,string major, string dept);
-	void course_sel(MYSQL *mysql,string sec_id,string year);		//Ñ¡¿Î
-	void course_del(MYSQL *mysql, string sec_id,string year);		//ÍË¿Î
-	void get_course(MYSQL *mysql,string year);						//»ñÈ¡ÒÑÑ¡¿Î³Ì
-	void search_course(MYSQL *mysql,string keywords,string type);					//²éÑ¯ÅÅ¿ÎÇé¿ö
+	void course_sel(MYSQL *mysql,string sec_id,string year);		//é€‰è¯¾
+	void course_del(MYSQL *mysql, string sec_id,string year);		//é€€è¯¾
+	void get_course(MYSQL *mysql,string year);						//è·å–å·²é€‰è¯¾ç¨‹
+	void search_course(MYSQL *mysql,string keywords,string type);					//æŸ¥è¯¢æ’è¯¾æƒ…å†µ
 	string get_sid();
 	string get_name();
 	string get_major();

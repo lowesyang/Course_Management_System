@@ -8,8 +8,8 @@ private:
 	char *user, *pswd, *host, *table;
 	int port;
 public:
-	static MYSQL *mysql;	//mysql连接句柄
+	static MYSQL *mysql;	//mysql杩炴帴鍙ユ焺
 	MYSQL_CONN();			//constructor
-	int connect();			//连接mysql函数
-	void close();			//关闭mysql
+	int connect();			//杩炴帴mysql鍑芥暟
+	void close();			//鍏抽棴mysql
 };

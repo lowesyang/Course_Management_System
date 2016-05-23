@@ -7,7 +7,7 @@ LOGIN::LOGIN(){
 
 void LOGIN::login(MYSQL *mysql,string username,string pswd,string type){
 	if (this->is_login){
-		cout << "ÕËºÅÒÑµÇÂ¼!";
+		cout << "è´¦å·å·²ç™»å½•!";
 		return;
 	}
 	string query = "select * from " + type + " where s_id='" + username + "' and psword='" + pswd + "';";
@@ -16,10 +16,10 @@ void LOGIN::login(MYSQL *mysql,string username,string pswd,string type){
 		this->res = mysql_store_result(mysql);
 		if (mysql_num_rows(this->res)){
 			this->is_login = 1;
-			cout << "µÇÂ¼³É¹¦";
+			cout << "ç™»å½•æˆåŠŸ";
 		}
 		else{
-			cout << "ÕËºÅ»òÃÜÂëÊäÈë´íÎó!";
+			cout << "è´¦å·æˆ–å¯†ç è¾“å…¥é”™è¯¯!";
 		}
 	}
 }
